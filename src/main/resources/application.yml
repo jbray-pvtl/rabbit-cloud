@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        basicoutputchannel:
+          destination: BasicQueue
+          contentType: text/plain
+          producer:
+            requiredGroups: basic-group
+        useroutputchannel:
+          destination: UserQueue
+          contentType: text/plain
+          producer:
+            requiredGroups: basic-group
+
+management:
+  security:
+    enabled: false
